@@ -1,0 +1,125 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>📚 আমার বই অ্যাপ</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+        h3 {
+      text-align: center;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    .book {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .book img {
+      width: 80px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .book-info {
+      flex: 1;
+    }
+    .book-info h2 {
+      margin: 0 0 10px 0;
+      font-size: 18px;
+    }
+    .book-info a {
+      text-decoration: none;
+      color: white;
+      background: #28a745;
+      padding: 6px 12px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+  <h4><marquee behavior="scroll" direction="left">
+এখানে এনিমে বাংলা মাঙ্গা পড়তে পারবে
+</marquee></h4>
+  <h1> Anime manga bangla</h1>
+  <input type="text" id="searchInput" placeholder="বইয়ের নাম লিখুন...">
+
+  <div id="bookList">
+    <!-- বই ১ -->
+    <div class="book">
+      <img src=" https://i.postimg.cc/L6sqG4qS/7999b569e38c522e87637941bf6ae84c.jpg  " alt="Book 1">
+      <div class="book-info">
+        <h2> Solo leveling </h2>
+        <a href="https://drive.google.com/file/d/your_google_drive_link1/view" target="_blank">📖 পড়ুন</a>
+      </div>
+    </div>
+
+    <!-- বই ২ -->
+    <div class="book">
+      <img src="https://i.ibb.co/M8cfKXZ/book2.jpg" alt="Book 2">
+      <div class="book-info">
+        <h2>oshi no ko</h2>
+        <a href="https://drive.google.com/file/d/your_google_drive_link2/view" target="_blank">📖 পড়ুন</a>
+      </div>
+    </div>
+        <!-- বই ২ -->
+    <div class="book">
+      <img src="https://i.ibb.co/M8cfKXZ/book2.jpg" alt="Book 2">
+      <div class="book-info">
+        <h2>uzumaki</h2>
+        <a href="https://drive.google.com/file/d/your_google_drive_link2/view" target="_blank">📖 পড়ুন</a>
+      </div>
+    </div>
+
+    <!-- এখানে যত খুশি বই এড করো -->
+    
+    
+    
+    
+  </div>
+
+  <script>
+  
+    // সার্চ ফাংশন
+    document.getElementById('searchInput').addEventListener('keyup', function () {
+      const searchValue = this.value.toLowerCase();
+      const books = document.querySelectorAll('.book');
+
+      books.forEach(book => {
+        const title = book.querySelector('h2').innerText.toLowerCase();
+        if (title.includes(searchValue)) {
+          book.style.display = 'flex';
+        } else {
+          book.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
